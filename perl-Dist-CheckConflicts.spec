@@ -1,22 +1,22 @@
 %define upstream_name    Dist-CheckConflicts
 %define upstream_version 0.02
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	5
 
-Summary:    Declare version conflicts for your dist
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Declare version conflicts for your dist
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(List::MoreUtils)
-BuildRequires: perl(Sub::Exporter)
-BuildRequires: perl(Test::Fatal)
-BuildRequires: perl(Test::More)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Sub::Exporter)
+BuildRequires:	perl(Test::Fatal)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl-devel
+BuildArch:	noarch
 
 %description
 One shortcoming of the CPAN clients that currently exist is that they have
@@ -43,24 +43,37 @@ these keys being valid:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+%__perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes LICENSE META.yml META.json
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+
+
+
+%changelog
+* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.20.0-4mdv2012.0
++ Revision: 765191
+- rebuilt for perl-5.14.2
+
+* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.20.0-3
++ Revision: 763707
+- rebuilt for perl-5.14.x
+
+* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 0.20.0-2
++ Revision: 654314
+- rebuild for updated spec-helper
+
+* Fri Jan 07 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.20.0-1mdv2011.0
++ Revision: 629544
+- import perl-Dist-CheckConflicts
 
