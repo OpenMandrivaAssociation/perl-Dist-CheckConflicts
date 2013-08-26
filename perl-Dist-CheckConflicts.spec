@@ -1,22 +1,20 @@
-%define upstream_name    Dist-CheckConflicts
-%define upstream_version 0.02
-
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+%define modname	Dist-CheckConflicts
+%define modver	0.02
 
 Summary:	Declare version conflicts for your dist
-License:	GPL+ or Artistic
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	5
+License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
-
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{modname}-%{modver}.tar.gz
+BuildArch:	noarch
 BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
-BuildArch:	noarch
 
 %description
 One shortcoming of the CPAN clients that currently exist is that they have
@@ -40,7 +38,7 @@ This module accepts a hash of options passed to its 'use' statement, with
 these keys being valid:
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -54,26 +52,6 @@ these keys being valid:
 
 %files
 %doc README Changes LICENSE META.yml META.json
-%{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-
-
-
-%changelog
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.20.0-4mdv2012.0
-+ Revision: 765191
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.20.0-3
-+ Revision: 763707
-- rebuilt for perl-5.14.x
-
-* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 0.20.0-2
-+ Revision: 654314
-- rebuild for updated spec-helper
-
-* Fri Jan 07 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.20.0-1mdv2011.0
-+ Revision: 629544
-- import perl-Dist-CheckConflicts
+%{_mandir}/man3/*
 
