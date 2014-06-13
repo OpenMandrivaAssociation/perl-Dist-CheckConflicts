@@ -1,10 +1,11 @@
 %define modname	Dist-CheckConflicts
-%define modver	0.02
+%define modver 0.11
 
 Summary:	Declare version conflicts for your dist
+
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -54,4 +55,5 @@ these keys being valid:
 %doc README Changes LICENSE META.yml META.json
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
