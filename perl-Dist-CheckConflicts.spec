@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Dist/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(List::MoreUtils)
+BuildRequires: perl(Module::Runtime)
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::More)
