@@ -5,7 +5,7 @@ Summary:	Declare version conflicts for your dist
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -56,5 +56,6 @@ these keys being valid:
 %doc README Changes LICENSE META.yml META.json
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
 
