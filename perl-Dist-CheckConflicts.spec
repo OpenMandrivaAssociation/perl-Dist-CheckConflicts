@@ -5,14 +5,14 @@ Summary:	Declare version conflicts for your dist
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	8
+Release:	9
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		http://metacpan.org/pod/Dist::CheckConflicts
 Source0:	http://www.cpan.org/modules/by-module/Dist/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(List::MoreUtils)
-BuildRequires: perl(Module::Runtime)
+BuildRequires:	perl(Module::Runtime)
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::More)
