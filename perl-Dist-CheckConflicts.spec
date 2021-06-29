@@ -5,7 +5,7 @@ Summary:	Declare version conflicts for your dist
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	9
+Release:	10
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/Dist::CheckConflicts
