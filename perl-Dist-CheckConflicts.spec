@@ -8,7 +8,7 @@ Version:	%perl_convert_version %{modver}
 Release:	13
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Dist::CheckConflicts
+Url:		https://metacpan.org/pod/Dist::CheckConflicts
 Source0:	http://www.cpan.org/modules/by-module/Dist/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(List::MoreUtils)
